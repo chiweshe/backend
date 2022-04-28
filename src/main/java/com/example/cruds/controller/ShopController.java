@@ -30,10 +30,10 @@ public class ShopController {
     public List<Shop> get(@PathVariable("shopLocation") String shopLocation){
         return shopService.getShopLocation(shopLocation);
     }
-    @PostMapping("/save")
-    public String saveShop(@RequestBody Shop shop){
-        shopRepository.save(shop);
-        return "Save...";
+  @PostMapping("/addShop")
+    public void add(@RequestBody Shop shop) {
+        shopService.saveShop(shop);
+    }
     }
 
 
